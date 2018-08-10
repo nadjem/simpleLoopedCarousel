@@ -24,35 +24,35 @@ html{
     min-height: 40vh;
     */
     border: 1px solid black;
-    img{
-      display: inline-block;
-      &.carousel-img{
-        position: absolute;
-        height: 100%;
-        min-width: 100%;
+      img{
+        display: inline-block;
+        &.carousel-img{
+          position: absolute;
+          height: 100%;
+          min-width: 100%;
 
-      }
-      &.active{
-        z-index: 999;
-        animation-duration: 2s;
-        animation-name: slidein;
-        animation-fill-mode: forwards;
-      }
-      &.prev{
-        left: -100%;
-        z-index: 998;
+        }
+        &.active{
+          z-index: 999;
+          animation-duration: 3s;
+          animation-name: slidein;
+          animation-fill-mode: forwards;
+        }
+        &.prev{
+          left: -100%;
+          z-index: 998;
 
-        animation-duration: 2s;
-        animation-name: slideout;
-        animation-fill-mode: forwards;
+          animation-duration: 3s;
+          animation-name: slideout;
+          animation-fill-mode: forwards;
+        }
+        &.next{
+          z-index: 998;
+          animation-duration: 3s;
+          animation-name: slideout;
+          animation-fill-mode: forwards;
+        }
       }
-      &.next{
-        z-index: 998;
-        animation-duration: 2s;
-        animation-name: slideout;
-        animation-fill-mode: forwards;
-      }
-    }
   }
   .btn-prev{
     position: absolute;
@@ -87,7 +87,7 @@ html{
 
 @keyframes slidein {
   from {
-    left: -100%;
+   left: -100%;
 
   }
 
