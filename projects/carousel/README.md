@@ -38,10 +38,10 @@ npm i simpleloopedcarousel --save
 \*exemple:
 ```
 let photoArray = [
- 'https://cdn.pixabay.com/photo/2018/08/04/07/38/printing-3583294_1280.jpg', 
- 'https://cdn.pixabay.com/photo/2018/07/20/22/43/adler-3551609_1280.jpg',
- 'https://cdn.pixabay.com/photo/2018/07/29/21/32/wildflowers-3571119_1280.jpg', 
- 'https://cdn.pixabay.com/photo/2018/07/28/19/57/lunar-eclipse-3568835_1280.jpg',
- 'https://cdn.pixabay.com/photo/2018/07/06/17/29/lily-3520837_1280.jpg'
+ 'http://imagizer.imageshack.com/v2/285x280q90/c/r/537/bKIprm.jpg',
+           'http://imagizer.imageshack.com/v2/640x473q90/r/912/LRvTD5.jpg',
+           'http://imagizer.imageshack.com/v2/260x260q90/c/r/673/giBvkP.jpg'
  ]
 ```
+
+[DEMO](https://simple-carousel.nadjem.me)
