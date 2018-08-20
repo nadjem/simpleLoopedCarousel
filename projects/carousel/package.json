@@ -1,6 +1,8 @@
 {
   "name": "simpleloopedcarousel",
-  "version": "0.0.5",
+  "version": "0.2.3",
+  "description": "simple looped carousel for Angular 2+ app",
+  "keywords":[ "carousel", "angular2+", "angular", "slide-show","slide show", "image slider"],
   "private": false,
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",

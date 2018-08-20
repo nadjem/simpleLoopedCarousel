@@ -1,8 +1,25 @@
 <div class="carousel-container">
-  <div class="carousel-photo-frame">
+  <div class="carousel-photo-frame" *ngFor="let photos of photosData;let i = index"
+       [ngClass]="{
+       'active' : photos.active,
+       'prev' : photos.prev,
+       'next':photos.next,
+       'activeBack':isMovePrev && photos.active,
+       'prevBack':isMovePrev && photos.prev,
+       'nextBack':isMovePrev && photos.next
+       }">
 
-    <img *ngFor="let photos of photosData;let i = index" [ngClass]="{'active' : photos.active,'prev' : photos.prev,'next':photos.next}"  class="carousel-img" src="{{photos.url}}" alt="{{i}}">
+    <img  class="carousel-img" src="{{photos.url}}" alt="{{i}}">
+    <div class="bg-carousel-img" [style.background-image]="'url(' + photos.url + ')'" ></div>
+
   </div>
-  <button *ngIf="inputControl" class="btn-prev"><</button>
+  <button *ngIf="inputControl" class="btn-prev" (click)="moveBack()"><</button>
   <button *ngIf="inputControl" class="btn-next" (click)="moveNext()">></button>
+
+  <div class="dot-container">
+    <ul class="list-dot">
+      <li class="dot" *ngFor="let photos of photosData;let i = index" [ngClass]="{'active' : photos.active}">
+      </li>
+    </ul>
+  </div>
 </div>

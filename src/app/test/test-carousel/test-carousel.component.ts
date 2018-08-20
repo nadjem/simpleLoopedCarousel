@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-test-carousel',
@@ -15,7 +15,9 @@ export class TestCarouselComponent implements OnInit {
   public isActive = 0;
   public isNext = 0;
   public isPrev = 0;
-  constructor() { }
+  private moveNextInterval;
+  public isMovePrev = false;
+  constructor(private ref: ChangeDetectorRef) { }
 
   ngOnInit() {
     console.log(this.inputDataPhoto);
@@ -75,19 +77,17 @@ export class TestCarouselComponent implements OnInit {
     }
     console.log(this.photosData);
 
-    setInterval(() => {
+    this.goNext();
+  }
+  goNext() {
+
+    this.moveNextInterval = setInterval(() => {
       this.moveNext();
     }, (this.inputDelay * 1000) + 3000);
   }
-
   moveNext() {
-
-
-
+    clearInterval(this.moveNextInterval);
     console.log(this.photosData);
-
-
-
     if (this.isPrev === this.photosData.length - 1) {
       this.isPrev = 0;
     } else {
@@ -116,6 +116,20 @@ export class TestCarouselComponent implements OnInit {
     this.photosData[this.isPrev].active = false;
     this.photosData[this.isPrev].next = false;
 
+  }
+  moveBack() {
+    clearInterval(this.moveNextInterval);
+    this.isMovePrev = true;
+
+    setTimeout(() => {
+         this.isMovePrev = false;
+         this.ref.detectChanges();
+       },  3000);
+    /*
+    setTimeout(() => {
+      this.goNext();
+      this.ref.detectChanges();
+    }, (this.inputDelay * 1000) + 5000);*/
   }
 
 }

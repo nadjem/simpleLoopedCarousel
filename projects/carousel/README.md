@@ -27,12 +27,13 @@ npm i simpleloopedcarousel --save
 ## use it
 
 ```javascript
-<nad-carousel [inputDelay]="10"  [inputDataPhoto]="photoArray" ></nad-carousel>
+<nad-carousel [inputDelay]="10" [inputControl]="true"  [inputDataPhoto]="photoArray" ></nad-carousel>
 ```
 
 | Option        | Value         |
 | ------------- |:-------------:|
 | inputDelay    | in second | 
+| inputControl    | defaut false | 
 | inputDataPhoto     | urls array [ ]*     |
  
 \*exemple:
